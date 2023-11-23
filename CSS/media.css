@@ -34,6 +34,9 @@ header,
 .menu ul li:nth-child(6):hover {
   background-color: #81c7d4;
 }
+.menu ul li:nth-child(7):hover {
+  background-color: #f9bf45;
+}
 
 .menu ul li:hover a {
   color: #434343;
@@ -943,7 +946,7 @@ input[type="submit"]:hover {
   }
 
   .menu {
-    width: 70%;
+    width: 80%;
   }
 
   .menu ul {
@@ -957,7 +960,7 @@ input[type="submit"]:hover {
   }
 
   .menu ul li {
-    width: calc(100% / 6);
+    width: calc(100% / 7);
   }
 
   .menu ul li a {

@@ -41,7 +41,7 @@ header {
 }
 
 .menu {
-  width: 70%;
+  width: 80%;
 }
 
 .menu ul {
@@ -55,7 +55,7 @@ header {
 }
 
 .menu ul li {
-  width: calc(100% / 6);
+  width: calc(100% / 7);
 }
 
 .menu ul li a {
