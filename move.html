@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TryToMove</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap"
+      rel="stylesheet"
+    />
+    <script src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "ADLaM Display", serif;
+      }
+
+      .m {
+        background-color: gold;
+        height: 100px;
+        width: 120px;
+        border-radius: 50% 50% 10% 10%;
+        position: relative;
+        /* top: 50px; */
+        left: 50px;
+      }
+
+      .n {
+        background-color: rgb(72, 185, 255);
+        height: 100px;
+        width: 120px;
+        border-radius: 50% 50% 10% 10%;
+        position: relative;
+        top: 550px;
+        left: 1000px;
+      }
+
+      .n1 {
+        background-color: rgb(255, 102, 85);
+        height: 100px;
+        width: 120px;
+        border-radius: 50% 50% 10% 10%;
+        position: relative;
+        top: 250px;
+        left: 1050px;
+      }
+
+      .e {
+        height: 40px;
+        width: 40px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 30px;
+      }
+
+      .e:nth-child(1) {
+        left: 20px;
+      }
+
+      .e:nth-child(2) {
+        left: 60px;
+      }
+
+      .b {
+        height: 30px;
+        width: 30px;
+        background-color: #222;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+
+      .btn {
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        background-color: gold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: background-color 0.2s linear;
+      }
+
+      .btn:hover {
+        background-color: darkorange;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .clock {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: rgb(176, 221, 234);
+        border: 1px solid gray;
+      }
+
+      .hand {
+        position: absolute;
+        left: 300px;
+        top: 300px;
+      }
+
+      .sec-hand {
+        position: absolute;
+        width: 2px;
+        height: 280px;
+        background-color: rgb(250, 62, 37);
+        left: -1px;
+        top: -280px;
+      }
+      .btn2 {
+        width: 120px;
+        border-radius: 20px;
+        padding: 0 20px;
+        margin: 0 10px;
+      }
+      .nav {
+        display: flex;
+        padding: 20px;
+      }
+      .h1 {
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1 class="h1">JQuery Exercises</h1>
+      <div class="btn btn2">
+        <a href="move.html"> 簡易互動小遊戲 </a>
+      </div>
+      <div class="btn btn2">
+        <a href="rgb.html"> RGB顏色選擇器 </a>
+      </div>
+    </div>
+    <div class="btn">
+      <a href=""><span class="material-symbols-outlined"> replay </span></a>
+    </div>
+
+    <div class="n">
+      <div class="e">
+        <div class="b b-2"></div>
+      </div>
+      <div class="e">
+        <div class="b b-2"></div>
+      </div>
+    </div>
+    <div class="n1">
+      <div class="e">
+        <div class="b b-3"></div>
+      </div>
+      <div class="e">
+        <div class="b b-3"></div>
+      </div>
+    </div>
+    <div class="m">
+      <div class="e">
+        <div class="b b-1"></div>
+      </div>
+      <div class="e">
+        <div class="b b-1"></div>
+      </div>
+    </div>
+    <!-- <div id="info"></div> -->
+    <!-- <div class="clock">
+      <div class="hand" id="sec-hand">
+        <div class="sec-hand"></div>
+      </div>
+    </div> -->
+  </body>
+  <script>
+    const secHand = document.querySelector("#sec-hand");
+
+    setInterval(() => {
+      const now = new Date();
+      info.innerHTML = now.toString().split(" ")[4];
+      const s = now.getSeconds();
+      secHand.style.transform = `rotate(${s * 6}deg)`;
+    }, 1000);
+
+    /*
+    TODO: 
+    1. 加時針, 分針
+    2. 等速度的鈔針
+    3. 刻度
+    */
+  </script>
+  <script>
+    window.setInterval(f, 200);
+    window.setInterval(f1, 200);
+    function f() {
+      d = Math.ceil(Math.random() * 4);
+      tn = $(".n").offset().top;
+      ln = $(".n").offset().left;
+      switch (d) {
+        case 1:
+          if (tn > 50) {
+            $(".n").css({ top: "-=50" });
+            $(".n").css({ top: "-=50" });
+            $(".b-2").css({ top: 0, left: 5 });
+          }
+          break;
+        case 2:
+          if (tn < h - 170) {
+            $(".n").css({ top: "+=50" });
+            $(".n").css({ top: "+=50" });
+            $(".b-2").css({ top: 10, left: 5 });
+          }
+          break;
+        case 3:
+          if (ln < w - 170) {
+            $(".n").css({ left: "+=50" });
+            $(".n").css({ left: "+=50" });
+            $(".b-2").css({ top: 5, left: 10 });
+          }
+          break;
+        case 4:
+          if (ln > 50) {
+            $(".n").css({ left: "-=50" });
+            $(".n").css({ left: "-=50" });
+            $(".b-2").css({ top: 5, left: 0 });
+          }
+          break;
+      }
+      if (
+        $(".m").offset().top == $(".n").offset().top &&
+        $(".m").offset().left == $(".n").offset().left
+      ) {
+        $(".n").remove();
+      }
+      // if ($(".m").offset().top == $(".n1").offset().top && $(".m").offset().left == $(".n1").offset().left) {
+      //     $(".n1").remove();
+      // }
+    }
+    function f1() {
+      d = Math.ceil(Math.random() * 4);
+      tn = $(".n1").offset().top;
+      ln = $(".n1").offset().left;
+      switch (d) {
+        case 1:
+          if (tn > 50) {
+            $(".n1").css({ top: "-=50" });
+            $(".b-3").css({ top: 0, left: 5 });
+          }
+          break;
+        case 2:
+          if (tn < h - 170) {
+            $(".n1").css({ top: "+=50" });
+            $(".b-3").css({ top: 10, left: 5 });
+          }
+          break;
+        case 3:
+          if (ln < w - 170) {
+            $(".n1").css({ left: "+=50" });
+            $(".b-3").css({ top: 5, left: 10 });
+          }
+          break;
+        case 4:
+          if (ln > 50) {
+            $(".n1").css({ left: "-=50" });
+            $(".b-3").css({ top: 5, left: 0 });
+          }
+          break;
+      }
+      // if ($(".m").offset().top == $(".n").offset().top && $(".m").offset().left == $(".n").offset().left) {
+      //     $(".n").remove();
+      // }
+      if (
+        $(".m").offset().top == $(".n1").offset().top &&
+        $(".m").offset().left == $(".n1").offset().left
+      ) {
+        $(".n1").remove();
+      }
+    }
+    w = $(document).width();
+    h = $(document).height();
+    $(document).on("keydown", function () {
+      tm = $(".m").offset().top;
+      lm = $(".m").offset().left;
+      // tn = $(".n").offset().top;
+      // ln = $(".n").offset().left;
+      switch (event.keyCode) {
+        case 87: //W
+          //alert(event.keyCode);
+          if (tm > 50) {
+            $(".m").css({ top: "-=50" });
+            $(".b-1").css({ top: 0, left: 5 });
+          }
+          break;
+        case 83: //S
+          // alert((h - 50));
+          if (tm < h - 170) {
+            $(".m").css({ top: "+=50" });
+            $(".b-1").css({ top: 10, left: 5 });
+          }
+          break;
+        case 68: //D
+          //alert(event.keyCode);
+          // alert((w - 50));
+          if (lm < w - 200) {
+            $(".m").css({ left: "+=50" });
+            $(".b-1").css({ top: 5, left: 10 });
+          }
+          break;
+        case 65: //A
+          //alert(event.keyCode);
+          if (lm > 50) {
+            $(".m").css({ left: "-=50" });
+            $(".b-1").css({ top: 5, left: 0 });
+          }
+          break;
+      }
+      //   function timer() {
+      //     let time = 60;
+      //     function countDown() {
+      //       time--;
+      //     }
+      //   }
+
+      // setInterval(function ())
+      if (
+        $(".m").offset().top == $(".n").offset().top &&
+        $(".m").offset().left == $(".n").offset().left
+      ) {
+        $(".n").remove();
+      }
+      if (
+        $(".m").offset().top == $(".n1").offset().top &&
+        $(".m").offset().left == $(".n1").offset().left
+      ) {
+        $(".n1").remove();
+      }
+      // switch (event.keyCode) {
+      //     case 38: //W
+      //         //alert(event.keyCode);
+      //         if (tn > 50) {
+      //             $(".n").css({ "top": "-=50" });
+      //             $(".b").css({ "top": 0, "left": 5 });
+      //         }
+      //         break;
+      //     case 40: //S
+      //         //alert(event.keyCode);
+      //         if (tn < (h - 170)) {
+      //             $(".n").css({ "top": "+=50" });
+      //             $(".b").css({ "top": 10, "left": 5 });
+      //         }
+      //         break;
+      //     case 39: //D
+      //         //alert(event.keyCode);
+      //         if (ln < (w - 170)) {
+      //             $(".n").css({ "left": "+=50" });
+      //             $(".b").css({ "top": 5, "left": 10 });
+      //         }
+      //         break;
+      //     case 37: //A
+      //         //alert(event.keyCode);
+      //         if (ln > 50) {
+      //             $(".n").css({ "left": "-=50" });
+      //             $(".b").css({ "top": 5, "left": 0 });
+      //         }
+      //         break;
+      // }
+    });
+  </script>
+</html>
