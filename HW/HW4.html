@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>輪播</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="header.css" />
+    <style>
+      form {
+        width: 700px;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      fieldset {
+        width: 500px;
+        border-radius: 30px;
+        padding: 20px;
+        background-color: azure;
+        border: 4px outset lightgray;
+      }
+
+      legend {
+        margin: 0 auto;
+        padding: 5px 10px;
+        border: 4px outset lightgray;
+        border-radius: 50px;
+        background-color: azure;
+      }
+
+      .num {
+        list-style: none;
+        margin: 0 0.1875rem;
+        border-bottom: 0.1875rem solid rgb(67, 154, 255);
+      }
+
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline-start: 0;
+      }
+
+      div {
+        text-align: center;
+      }
+
+      .imgbox {
+        height: 200px;
+        width: 300px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      img {
+        width: 300px;
+      }
+
+      .li2 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        border-bottom: 0.3125rem solid rgb(67, 154, 255);
+      }
+
+      input {
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        border-radius: 50%;
+        background-color: azure;
+        border: 2px outset lightgray;
+      }
+
+      input:nth-child(1) {
+        padding: 0 6px;
+      }
+
+      input:nth-child(4) {
+        padding: 0 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="link">
+        <h1>JavaScript Exercises</h1>
+        <ul class="headerul">
+          <li class="headerli"><a href="HW1.html">Exercises 1</a></li>
+          <li class="headerli"><a href="HW2.html">Exercises 2</a></li>
+          <li class="headerli"><a href="HW3.html">Exercises 3</a></li>
+          <li class="headerli active4"><a href="HW4.html">Exercises 4</a></li>
+          <li class="headerli"><a href="HW5.html">Exercises 5</a></li>
+        </ul>
+      </div>
+    </header>
+    <form action="">
+      <fieldset>
+        <legend>ADS</legend>
+        <div class="imgbox">
+          <img id="picS1" src="WinImages/0.avif" alt="" />
+        </div>
+        <div>
+          <ul>
+            <li class="num">1</li>
+            <li class="num">2</li>
+            <li class="num">3</li>
+            <li class="num">4</li>
+            <li class="num">5</li>
+            <li class="num">6</li>
+            <li class="num">7</li>
+            <li class="num">8</li>
+            <li class="num">9</li>
+            <li class="num">10</li>
+          </ul>
+        </div>
+        <div>
+          <input
+            id="left"
+            type="button"
+            class="material-symbols-outlined"
+            value="arrow_back_ios"
+          />
+          <input
+            id="stop"
+            type="button"
+            class="material-symbols-outlined"
+            value="pause"
+          />
+          <input
+            id="continue"
+            type="button"
+            class="material-symbols-outlined"
+            value="play_arrow"
+          />
+          <input
+            id="right"
+            type="button"
+            class="material-symbols-outlined"
+            value="arrow_forward_ios"
+          />
+        </div>
+      </fieldset>
+    </form>
+    <script>
+      let i = 0;
+      list = document.getElementsByClassName("num");
+      pic = document.getElementById("picS1");
+      function f() {
+        list[i].classList.remove("li2");
+        i++;
+        if (i == 10) {
+          i = 0;
+        }
+        pic.src = "WinImages/" + i + ".avif";
+        list[i].classList.add("li2");
+      }
+
+      f();
+      let f1 = window.setInterval(f, 2000);
+
+      function stop() {
+        window.clearInterval(f1);
+      }
+
+      function cont() {
+        f1 = window.setInterval(f, 2000);
+      }
+
+      function back() {
+        list[i].classList.remove("li2");
+        i--;
+        if (i == -1) {
+          i = 9;
+        }
+        pic.src = "WinImages/" + i + ".avif";
+        list[i].classList.add("li2");
+      }
+
+      document.getElementById("stop").addEventListener("click", stop);
+      document.getElementById("continue").addEventListener("click", cont);
+      document.getElementById("left").addEventListener("click", back);
+      document.getElementById("left").addEventListener("click", stop);
+      document.getElementById("right").addEventListener("click", f);
+      document.getElementById("right").addEventListener("click", stop);
+    </script>
+  </body>
+</html>

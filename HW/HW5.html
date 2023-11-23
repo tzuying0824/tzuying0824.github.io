@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="header.css" />
+    <title>Document</title>
+    <style>
+      .all {
+        width: 30rem;
+        height: 30rem;
+        margin: 50px auto;
+        display: flex;
+        text-align: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        background-color: rgb(255, 241, 248);
+        box-shadow: -7px 7px 1px 9px palevioletred;
+        padding: 5%;
+        border-radius: 50%;
+      }
+
+      h2,
+      h3,
+      h4 {
+        width: 100%;
+      }
+
+      th {
+        background-color: hotpink;
+        border: 3px solid palevioletred;
+        height: 1.2rem;
+        width: 2.5rem;
+      }
+
+      td {
+        text-align: center;
+        height: 1.2rem;
+        width: 2.5rem;
+      }
+
+      table {
+        border: 3px solid palevioletred;
+        margin: 5px auto;
+        border-radius: 2%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="link">
+        <h1>JavaScript Exercises</h1>
+        <ul class="headerul">
+          <li class="headerli"><a href="HW1.html">Exercises 1</a></li>
+          <li class="headerli"><a href="HW2.html">Exercises 2</a></li>
+          <li class="headerli"><a href="HW3.html">Exercises 3</a></li>
+          <li class="headerli"><a href="HW4.html">Exercises 4</a></li>
+          <li class="headerli active5"><a href="HW5.html">Exercises 5</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="all">
+      <h2>welcome</h2>
+      <h4>
+        <select name="year" id="yearid">
+          <option value="0">請選擇</option></select
+        >年
+        <select name="month" id="monid">
+          <option value="0">請選擇</option></select
+        >月
+        <select name="day" id="dayid">
+          <option value="0">請選擇</option></select
+        >日
+      </h4>
+      <h3 id="out">請選擇日期</h3>
+      <table id="rili">
+        <tr>
+          <th>SUN</th>
+          <th>MON</th>
+          <th>TUE</th>
+          <th>WED</th>
+          <th>THU</th>
+          <th>FRI</th>
+          <th>SAT</th>
+        </tr>
+      </table>
+    </div>
+    <script>
+      document.getElementById("yearid").addEventListener("change", changdate);
+      document.getElementById("monid").addEventListener("change", changdate);
+      document.getElementById("dayid").addEventListener("change", changdate2);
+      // let yea = 2010, mon = 1, day = 1;
+      let yearid = document.getElementById("yearid"),
+        monid = document.getElementById("monid"),
+        dayid = document.getElementById("dayid");
+      let out = document.getElementById("out");
+      for (i = 2010; i < 2026; i++) {
+        yearid.innerHTML += "<option value=" + i + ">" + i + "</option>";
+      }
+      for (i = 1; i < 13; i++) {
+        monid.innerHTML += "<option value=" + i + ">" + i + "</option>";
+      }
+      for (i = 1; i < 32; i++) {
+        dayid.innerHTML += "<option value=" + i + ">" + i + "</option>";
+      }
+
+      let t, table, d;
+      function changdate() {
+        yea = yearid.value;
+        mon = monid.value;
+        day = dayid.value;
+        t = new Date(yea, mon, 0);
+        d = t.getDate();
+        list = "<option value='0'>請選擇</option>";
+        reset();
+        for (i = 1; i < d + 1; i++) {
+          list += "<option value=" + i + ">" + i + "</option>";
+          dayid.innerHTML = list;
+        }
+        day = dayid.value;
+        out.innerHTML = `選擇的日期是:${yea}年${mon}月${day}日`;
+        let fd = new Date(yea, mon - 1, 1);
+        first = fd.getDay();
+        for (i = 0; i <= 41; i++) {
+          document.getElementsByTagName("td")[i].innerHTML = "";
+        }
+        let a = 1;
+
+        for (i = first; i < d + first; i++) {
+          document.getElementsByTagName("td")[i].innerHTML = a;
+          a++;
+        }
+      }
+
+      function reset() {
+        for (i = 0; i <= 41; i++) {
+          document.getElementsByTagName("td")[i].style.backgroundColor =
+            "lightpink";
+        }
+      }
+
+      function changdate2() {
+        yea = yearid.value;
+        mon = monid.value;
+        day = dayid.value;
+        out.innerHTML = `選擇的日期是:${yea}年${mon}月${day}日`;
+        reset();
+        for (i = 0; i <= 41; i++) {
+          if (document.getElementsByTagName("td")[i].innerHTML == day) {
+            document.getElementsByTagName("td")[i].style.backgroundColor =
+              "white";
+          }
+        }
+        let fd = new Date(yea, mon - 1, 1);
+        first = fd.getDay();
+        let a = 1;
+        for (i = first; i < d + first; i++) {
+          document.getElementsByTagName("td")[i].innerHTML = a;
+          a++;
+        }
+      }
+
+      for (i = 1; i < 7; i++) {
+        document.getElementById("rili").innerHTML += `<tr id="r${i}"></tr>`;
+        for (j = 0; j < 7; j++) {
+          document.getElementById(
+            `r${i}`
+          ).innerHTML += `<td id="d${i}${j}"></td>`;
+        }
+      }
+      for (i = 0; i <= 41; i++) {
+        document.getElementsByTagName("td")[i].innerHTML = " ";
+        document.getElementsByTagName("td")[i].style.backgroundColor =
+          "lightpink";
+      }
+      let a = 1;
+    </script>
+  </body>
+</html>

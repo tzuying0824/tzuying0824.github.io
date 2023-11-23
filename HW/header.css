@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap");
+* {
+  font-family: "ADLaM Display", serif;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.headerul {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline-start: 0px;
+}
+
+.headerli {
+  width: 20%;
+  list-style: none;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 5px;
+  height: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.active1 {
+  background-color: rgb(165, 224, 217);
+}
+.active2 {
+  background-color: rgb(248, 225, 178);
+}
+.active4 {
+  background-color: rgb(195, 246, 255);
+}
+.active3 {
+  background-color: rgb(190, 204, 255);
+}
+.active5 {
+  background-color: rgb(255, 207, 235);
+}

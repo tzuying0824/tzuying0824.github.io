@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>評分系統</title>
+    <link rel="stylesheet" href="header.css" />
+    <style>
+      #all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+        border-radius: 30px;
+        width: 45%;
+        border: 5px dotted cornflowerblue;
+      }
+
+      img {
+        width: 20%;
+        display: inline-block;
+      }
+
+      .text {
+        margin: 10px auto;
+        width: 50%;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="link">
+        <h1>JavaScript Exercises</h1>
+        <ul class="headerul">
+          <li class="headerli"><a href="HW1.html">Exercises 1</a></li>
+          <li class="headerli"><a href="HW2.html">Exercises 2</a></li>
+          <li class="headerli active3"><a href="HW3.html">Exercises 3</a></li>
+          <li class="headerli"><a href="HW4.html">Exercises 4</a></li>
+          <li class="headerli"><a href="HW5.html">Exercises 5</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="all">
+      <img id="idimg1" class="img" src="WinImages/00.png" />
+      <img id="idimg2" class="img" src="WinImages/00.png" />
+      <img id="idimg3" class="img" src="WinImages/00.png" />
+      <img id="idimg4" class="img" src="WinImages/00.png" />
+      <img id="idimg5" class="img" src="WinImages/00.png" />
+    </div>
+    <h2 class="text">點擊可以評分，雙即可重置。</h2>
+    <h3 id="num" class="text">尚未評分</h3>
+    <script>
+      let div = document.getElementById("all");
+      // let imgs = new Array([]);
+      let imgs = document.querySelectorAll(".img");
+      let num = document.getElementById("num");
+      for (let img of imgs) {
+        img.addEventListener("mouseover", mouseover);
+        img.addEventListener("mouseout", mouseout);
+        img.addEventListener("click", click);
+        img.addEventListener("dblclick", dbclick);
+      }
+
+      function mouseover() {
+        let s = parseInt(this.id.substr(-1));
+        for (i = 0; i < s; i++) {
+          imgs[i].src = `WinImages/0${i + 1}.png`;
+        }
+        num.innerHTML = `評分為${s}分`;
+      }
+      function mouseout() {
+        let s = parseInt(this.id.substr(-1));
+        for (i = 0; i < s; i++) {
+          imgs[i].src = `WinImages/00.png`;
+          num.innerHTML = `尚未評分`;
+        }
+      }
+      function click() {
+        let s = parseInt(this.id.substr(-1));
+        for (i = 0; i < s; i++) {
+          imgs[i].src = `WinImages/0${i + 1}.png`;
+        }
+        for (let img of imgs) {
+          img.removeEventListener("mouseover", mouseover);
+          img.removeEventListener("mouseout", mouseout);
+          img.removeEventListener("click", click);
+        }
+        num.innerHTML = `⭐評分為${s}分⭐`;
+      }
+      function dbclick() {
+        for (let img of imgs) {
+          img.addEventListener("mouseover", mouseover);
+          img.addEventListener("mouseout", mouseout);
+          img.addEventListener("click", click);
+        }
+        for (i = 0; i < 5; i++) {
+          imgs[i].src = `WinImages/00.png`;
+          num.innerHTML = `尚未評分`;
+        }
+      }
+    </script>
+  </body>
+</html>

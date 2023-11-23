@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <title>FORM CHECK</title>
+    <link rel="stylesheet" href="header.css" />
+    <style>
+      body {
+        background-color: #ffffff;
+        background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+      }
+
+      fieldset {
+        border: 6px dashed;
+        border-color: orange;
+        margin: 50px auto;
+        width: 25%;
+        padding: 2em 3em;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box {
+        width: 100%;
+        height: 100%;
+      }
+
+      label {
+        font-size: 1.2em;
+      }
+
+      legend {
+        font-size: 1.5em;
+
+        padding: 0 1em;
+      }
+
+      input {
+        width: 30%;
+        height: 1.6875rem;
+        font-size: 1rem;
+        border: 1px solid rgb(112, 112, 112);
+        border-radius: 8px;
+      }
+
+      span {
+        font-size: 0.9em;
+        color: rgb(112, 112, 112);
+      }
+
+      .material-symbols-outlined {
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="link">
+        <h1>JavaScript Exercises</h1>
+        <ul class="headerul">
+          <li class="headerli"><a href="HW1.html">Exercises 1</a></li>
+          <li class="headerli active2"><a href="HW2.html">Exercises 2</a></li>
+          <li class="headerli"><a href="HW3.html">Exercises 3</a></li>
+          <li class="headerli"><a href="HW4.html">Exercises 4</a></li>
+          <li class="headerli"><a href="HW5.html">Exercises 5</a></li>
+        </ul>
+      </div>
+    </header>
+    <form action="" legend>
+      <fieldset id="form1">
+        <legend>FORM CHECK</legend>
+        <div class="box">
+          <label>姓名:</label>
+          <input
+            type="text"
+            id="idName"
+            size="6"
+            placeholder="請輸入姓名"
+          /><!-- 瀏覽器執行到此標籤會建立一個物件-->
+          <span id="idsp1"></span><br />
+          <span id="">(1.不可空白2.至少2個字以上3.只能使用中文字)</span><br />
+          <hr />
+
+          <label>密碼:</label>
+          <input
+            type="password"
+            id="idPwd"
+            size="6"
+            placeholder="請輸入密碼"
+          /><!-- 瀏覽器執行到此標籤會建立一個物件-->
+          <span id="idsp2"></span><br />
+          <span id=""
+            >(1.不可空白2.至少6個字以上且包含英文字母、數字和特殊符號)</span
+          ><br />
+          <hr />
+
+          <label>日期:</label>
+          <input
+            type="text"
+            id="idDate"
+            size="6"
+            placeholder="請輸入日期"
+          /><!-- 瀏覽器執行到此標籤會建立一個物件-->
+          <span id="idsp3"></span><br />
+          <span id="">格式:西元年/月/日(yyyy/mm/dd)</span><br />
+        </div>
+      </fieldset>
+    </form>
+    <script>
+      let bor = document.getElementById("form1");
+      let ckeckName = 0,
+        ckeckPwd = 0,
+        ckeckDate = 0;
+      ///////////////////姓名//////////////////////////
+      document.getElementById("idName").addEventListener("blur", checkName);
+      function checkName() {
+        let theNObj = document.getElementById("idName");
+        let theNObjVal = theNObj.value;
+        let sp = document.getElementById("idsp1");
+        let theNObjValLen = theNObjVal.length;
+        // console.log(theNObjValLen)
+        let flag1 = false;
+        if (theNObjVal == "") {
+          sp.innerHTML =
+            "<span class='material-symbols-outlined' style='color:red'>cancel姓名不可為空白</span>";
+          ckeckName = 2;
+        } else if (theNObjValLen >= 2) {
+          for (i = 0; i < theNObjValLen; i++) {
+            w = theNObjVal.charCodeAt(i);
+            if (w >= 0x4e00 && w <= 0x9fff) {
+              flag1 = true;
+            } else {
+              flag1 = false;
+            }
+            if (flag1 == false) {
+              sp.innerHTML =
+                "<span class='material-symbols-outlined' style='color:red'>cancel姓名必須全部為中文</span>";
+              ckeckName = 2;
+              break;
+            } else if (i == theNObjValLen - 1 && flag1 == true) {
+              sp.innerHTML =
+                "<span class='material-symbols-outlined'style='color:MediumSeaGreen'>check_circle正確</span>";
+              ckeckName = 1;
+            }
+          }
+        } else {
+          sp.innerHTML =
+            "<span class='material-symbols-outlined' style='color:red'>cancel姓名至少要有2個字</span>";
+
+          ckeckName = 2;
+        }
+        bordercolor();
+      }
+      ///////////////////密碼//////////////////////////
+      document.getElementById("idPwd").addEventListener("blur", checkPwd);
+      function checkPwd() {
+        //取得idPwd元素
+        let thePwdObj = document.getElementById("idPwd");
+        // console.log(thePwdObj);
+        //取得idPwd元素值
+        let thePwdObjVal = thePwdObj.value;
+        // console.log(thePwdObjVal);
+        // console.log(typeof thePwdObjVal);
+        let sp = document.getElementById("idsp2");
+        let thePwdObjValLen = thePwdObjVal.length;
+        let flag1 = false,
+          flag2 = false,
+          flag3 = false;
+        //判斷元素值是否為空白，密碼長度是否大於6
+        //如果長度是否大於6，判斷是否包含字母、數字、特殊符號
+        if (thePwdObjVal == "") {
+          sp.innerHTML =
+            "<span class='material-symbols-outlined'style='color:red'>cancel密碼不可為空白</span>";
+          ckeckPwd = 2;
+        } else if (thePwdObjValLen >= 6) {
+          for (i = 0; i < thePwdObjValLen; i++) {
+            let ch = thePwdObjVal.charAt(i).toUpperCase();
+            // console.log(ch);
+            if (ch >= "A" && ch <= "Z") {
+              flag1 = true;
+            } else if (ch >= "0" && ch <= "9") {
+              flag2 = true;
+            } else if (ch >= "!" && ch <= "@") {
+              flag3 = true;
+            }
+            if (flag1 && flag2 && flag3) {
+              sp.innerHTML =
+                "<span class='material-symbols-outlined'style='color:MediumSeaGreen' >check_circle正確</span>";
+              ckeckPwd = 1;
+              break;
+            } else if (flag1 == false) {
+              sp.innerHTML =
+                "<span class='material-symbols-outlined'style='color:red'>cancel密碼須包含英文字母</span>";
+              ckeckPwd = 2;
+            } else if (flag2 == false) {
+              sp.innerHTML =
+                "<span class='material-symbols-outlined'style='color:red'>cancel密碼須包含數字</span>";
+              ckeckPwd = 2;
+            } else if (flag3 == false) {
+              sp.innerHTML =
+                "<span class='material-symbols-outlined'style='color:red'>cancel密碼須包含特殊字元</span>";
+              ckeckPwd = 2;
+            }
+          }
+        } else {
+          sp.innerHTML =
+            "<span class='material-symbols-outlined'style='color:red'>cancel密碼至少要有6個字元</span>";
+          ckeckPwd = 2;
+        }
+        bordercolor();
+      }
+      ///////////////////日期//////////////////////////
+      document.getElementById("idDate").addEventListener("blur", checkDate);
+      function checkDate() {
+        let theDObj = document.getElementById("idDate");
+        let theDObjVal = theDObj.value;
+        let d = new Date(theDObj.value);
+        let sp = document.getElementById("idsp3");
+        let YY = d.getFullYear(),
+          MM = d.getMonth(),
+          DD = d.getDate();
+        let dcheak = theDObjVal.split("/");
+        // console.log(d);
+        // console.log(theDObjVal);
+        // console.log(YY);
+        // console.log(MM + 1);
+        // console.log(DD);
+        // console.log(dcheak[0]);
+        // console.log(dcheak[1]);
+        // console.log(dcheak[2]);
+        if (theDObjVal == "") {
+          sp.innerHTML =
+            "<span class='material-symbols-outlined'style='color:red'>cancel日期不可為空白</span>";
+          ckeckDate = 2;
+        } else {
+          if (YY == dcheak[0] && MM + 1 == dcheak[1] && DD == dcheak[2]) {
+            sp.innerHTML =
+              "<span class='material-symbols-outlined' style='color:MediumSeaGreen'>check_circle正確</span>";
+            ckeckDate = 1;
+          } else {
+            sp.innerHTML =
+              "<span class='material-symbols-outlined' style='color:red'>cancel日期格式錯誤</span>";
+            ckeckDate = 2;
+          }
+        }
+        bordercolor();
+      }
+      ///////////////////邊框顏色///////////////////////
+      function bordercolor() {
+        if (ckeckName == 1 && ckeckPwd == 1 && ckeckDate == 1) {
+          bor.style.borderColor = "MediumSeaGreen";
+        } else if (ckeckName == 2 || ckeckPwd == 2 || ckeckDate == 2) {
+          bor.style.borderColor = "red";
+        } else if (ckeckName == 1 || ckeckPwd == 1 || ckeckDate == 1) {
+          bor.style.borderColor = "orange";
+        }
+      }
+    </script>
+  </body>
+</html>
