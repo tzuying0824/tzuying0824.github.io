@@ -1,0 +1,20 @@
+
+body
+    &::after
+        content: "XS"
+        font-size: 60px
+        font-weight: bold
+        color: #f46c6c
+        position: absolute
+        right: 0
+        top: 0
+        @media (min-width: 576px)
+            content: "SM"
+        @media (min-width: 768px)
+            content: "MD"
+        @media (min-width: 992px)
+            content: "LG"
+        @media (min-width: 1200px)
+            content: "XL"
+        @media (min-width: 1400px)
+            content: "XXL"

@@ -1,0 +1,48 @@
+.hpx-240 {
+  height: 240px;
+}
+
+.hpx-120 {
+  height: 120px;
+}
+
+.hpx-90 {
+  height: 90px;
+}
+
+.hpx-60 {
+  height: 60px;
+}
+
+.wpx-800 {
+  width: 800px;
+}
+
+.wpx-80 {
+  width: 80px;
+}
+
+.bgc1 {
+  background-color: #FFF6B0;
+}
+
+.bgc2 {
+  background-color: #7DE88F;
+}
+
+.row1 {
+  display: flex;
+  align-items: end;
+}
+
+.col {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col1 {
+  margin-left: 10px;
+  margin-right: auto;
+}/*# sourceMappingURL=testFlex.css.map */

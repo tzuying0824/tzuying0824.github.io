@@ -1,0 +1,66 @@
+.h100px {
+  height: 100px;
+}
+
+.h300px {
+  height: 300px;
+}
+
+.h350px {
+  height: 350px;
+}
+
+.h700px {
+  height: 700px;
+}
+
+.w100px {
+  width: 100px;
+}
+
+.h30px {
+  height: 30px;
+}
+
+.w30px {
+  width: 30px;
+}
+
+.fz20 {
+  font-size: 20px;
+}
+
+.fz14 {
+  font-size: 14px;
+}
+
+.fz60 {
+  font-size: 60px;
+}
+
+.bgi {
+  background-image: url(https://images.pexels.com/photos/920220/pexels-photo-920220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-position: 0 center;
+  box-shadow: inset 0px -50px 100px black;
+}
+
+aside .nav .nav-link.active {
+  border-bottom: 3px solid #1463ff;
+}
+
+section {
+  min-height: 100px;
+}
+
+.top60 {
+  top: 60px;
+}
+
+.bora {
+  border-radius: 5px;
+}
+
+.b10px {
+  bottom: 10px;
+}/*# sourceMappingURL=pageContent2.css.map */

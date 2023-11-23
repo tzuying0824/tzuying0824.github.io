@@ -1,0 +1,9 @@
+@import "../bootstrap/scss/functions"
+@mixin callout-var($color)
+    --c-bg-c: #{tint-color($color,80)}
+    --c-bl-c: #{shade-color($color,20)}
+    background-color: var(--c-bg-c)
+    border-left: 10px solid var(--c-bl-c)
+    padding: 5px
+.callout
+    @include callout-var(#89b3ee)

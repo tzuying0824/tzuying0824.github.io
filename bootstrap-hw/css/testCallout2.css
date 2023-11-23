@@ -1,0 +1,71 @@
+.callout-primary {
+  --c-bg-c: #cfe2ff;
+  --c-bl-c: #0a58ca;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout-secondary {
+  --c-bg-c: #e2e3e5;
+  --c-bl-c: #565e64;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout-success {
+  --c-bg-c: #d1e7dd;
+  --c-bl-c: #146c43;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout-info {
+  --c-bg-c: #cff4fc;
+  --c-bl-c: #0aa2c0;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout-warning {
+  --c-bg-c: #fff3cd;
+  --c-bl-c: #cc9a06;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout-danger {
+  --c-bg-c: #f8d7da;
+  --c-bl-c: #b02a37;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout-light {
+  --c-bg-c: #fefefe;
+  --c-bl-c: #c6c7c8;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout-dark {
+  --c-bg-c: #d3d3d4;
+  --c-bl-c: #1a1e21;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}
+
+.callout {
+  --c-bg-c: #e1e7da;
+  --c-bl-c: #566b36;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}/*# sourceMappingURL=testCallout2.css.map */

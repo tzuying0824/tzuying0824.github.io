@@ -1,0 +1,27 @@
+.w250px {
+  width: 250px;
+}
+
+.w180px {
+  width: 180px;
+}
+
+html, body {
+  height: 100%;
+}
+
+.bgpink {
+  background-color: #ffb1b1;
+}
+
+.bread {
+  background-color: rgba(227, 128, 0, 0.8862745098);
+}
+
+main {
+  width: 100%;
+}
+
+.mm2 {
+  margin-right: -25px;
+}/*# sourceMappingURL=pageDashboard.css.map */

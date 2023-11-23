@@ -1,0 +1,7 @@
+.callout {
+  --c-bg-c: #e7f0fc;
+  --c-bl-c: #6e8fbe;
+  background-color: var(--c-bg-c);
+  border-left: 10px solid var(--c-bl-c);
+  padding: 5px;
+}/*# sourceMappingURL=testCallout.css.map */
