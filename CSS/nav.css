@@ -13,7 +13,6 @@ body {
   font-size: 1.25rem;
   color: #434343;
   font-family: "Yusei Magic", sans-serif;
-  scroll-behavior: smooth;
 }
 
 header {
@@ -231,6 +230,7 @@ footer {
   height: 4rem;
   border: 1px solid #fffff9;
   border-radius: 3px;
+  font-size: 16px;
 }
 
 .s:nth-child(n):hover {

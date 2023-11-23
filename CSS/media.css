@@ -301,7 +301,7 @@ header,
 }
 
 .word1 h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin: 1rem 0;
 }
 
@@ -628,45 +628,47 @@ header,
   width: 100%;
   text-align: center;
   margin-top: 10%;
+  font-size: 24px;
 }
 
 .work {
   width: 100%;
   height: auto;
-  margin: 3% 0;
+  margin: 3% 0px;
   display: flex;
   justify-content: center;
 }
 
 .workcard {
-  width: 30%;
+  width: 25%;
   border-radius: 100%;
-  padding: 7% 3%;
+  padding: 7%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  gap: 16px;
   align-items: center;
   transition: width 0.5s cubic-bezier(0, 0.63, 0, 1.09);
 }
 
-.workcard:hover {
+.workcard {
   width: 90%;
   height: 100%;
   border-radius: 20px;
 }
 
-.work:nth-child(2) .workcard:hover {
+.work:nth-child(2) .workcard {
   background-color: #00aa90;
 }
 
-.work:nth-child(3) .workcard:hover {
+.work:nth-child(3) .workcard {
   background-color: #81c7d4;
 }
 
-.work:nth-child(4) .workcard:hover {
+.work:nth-child(4) .workcard {
   background-color: #f9bf45;
 }
 
-.work:nth-child(5) .workcard:hover {
+.work:nth-child(5) .workcard {
   background-color: #e3916e;
 }
 
@@ -696,22 +698,22 @@ header,
   }
 }
 
-.workcard:hover .workicon {
+/* .workcard:hover .workicon {
   background-color: #fffffb;
   color: #434343;
   animation: none;
-}
+} */
 
 .worktext {
-  display: none;
+  /* display: none; */
   font-size: 1rem;
   text-align: center;
 }
 
-.workcard:hover .worktext {
+/* .workcard:hover .worktext {
   display: block;
   width: 80%;
-}
+} */
 
 /* 照片牆 */
 .con4 {
@@ -1056,8 +1058,8 @@ input[type="submit"]:hover {
     padding-bottom: 10%;
   }
 
-  .workcard:hover {
-    width: 100%;
+  .workcard {
+    width: 90%;
     height: 100%;
   }
 
@@ -1066,13 +1068,13 @@ input[type="submit"]:hover {
     height: 150px;
   }
 
-  .workcard {
+  /* .workcard {
     flex-wrap: wrap;
-  }
-
+  } */
+  /* 
   .workcard:hover .workicon {
     margin: 0 20%;
-  }
+  } */
 
   /* 表單 */
   .infophoto {
