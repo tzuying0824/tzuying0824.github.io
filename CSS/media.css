@@ -33,11 +33,15 @@ header,
 }
 .menu ul li:nth-child(6):hover {
   background-color: #81c7d4;
+   display:none;
 }
 .menu ul li:nth-child(7):hover {
   background-color: #f9bf45;
+   display:none;
 }
-
+.rwd1{
+  display:none;
+}
 .menu ul li:hover a {
   color: #434343;
 }
