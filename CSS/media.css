@@ -99,7 +99,7 @@ header,
   right: 5%;
   top: 50%;
   animation: shape 10s linear infinite;
-  z-index:0;
+  z-index:-10;
 }
 
 @keyframes shape {
