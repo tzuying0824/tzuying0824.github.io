@@ -939,7 +939,10 @@ input[type="submit"]:hover {
     padding: 0px 20px;
     position: fixed;
   }
-
+.menu ul li:nth-child(7),
+.menu ul li:nth-child(6){
+  display:block;
+}
   .logo {
     color: #fffffb;
     display: flex;
@@ -1110,6 +1113,7 @@ input[type="submit"]:hover {
     border-width: 293.7px 169.5px 0 169.5px;
     right: 5%;
     top: 50%;
+    z-index:0;
   }
 
   #ani ul li:nth-child(2) {
