@@ -1,8 +1,6 @@
 /* 手機 */
 @import url("https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Yusei+Magic&display=swap");
-.rwd1{
-  display:none;
-}
+
 header,
 .menu ul {
   /* flex-direction: column; */
@@ -43,7 +41,9 @@ header,
 .menu ul li:hover a {
   color: #434343;
 }
-
+.rwd1{
+  display:none;
+}
 .menu-icon {
   display: flex;
   justify-content: center;
