@@ -41,9 +41,7 @@ header,
 .menu ul li:hover a {
   color: #434343;
 }
-.rwd1{
-  display:none;
-}
+
 .menu-icon {
   display: flex;
   justify-content: center;
