@@ -12,7 +12,10 @@ header,
 .menu ul li a {
   width: 100%;
 }
-
+.menu ul li:nth-child(7),
+.menu ul li:nth-child(6){
+  display:none;
+}
 .menu ul li:nth-child(1):hover {
   background-color: #00aa90;
 }
@@ -33,11 +36,9 @@ header,
 }
 .menu ul li:nth-child(6):hover {
   background-color: #81c7d4;
-   display:none;
 }
 .menu ul li:nth-child(7):hover {
   background-color: #f9bf45;
-   display:none;
 }
 .rwd1{
   display:none;
